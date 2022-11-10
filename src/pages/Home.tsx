@@ -18,7 +18,17 @@ export const Home: React.FC = () => {
       <JacketItem
         title={title}
         image={bannerAlbum1}
-        price="50 TEO"
+        isTrending={true}
+        price="50 TOKEN"
+        listeningRate="+25%"
+        onClick={onHandleClick}
+        style={{ margin: '10px' }}
+      />
+      <JacketItem
+        title={title}
+        image={bannerAlbum1}
+        isTrending={false}
+        price="30 TOKEN"
         listeningRate="+25%"
         onClick={onHandleClick}
         style={{ margin: '10px' }}
@@ -29,15 +39,15 @@ export const Home: React.FC = () => {
         style={{ margin: '10px' }}
         listeningRate="+25%"
         isTrending={true}
-        streaming={200}
+        listener={5000}
       />
       <SongItem
         title={title}
         image={bannerSong}
         style={{ margin: '10px' }}
-        listeningRate="-25%"
+        listeningRate="+25%"
         isTrending={false}
-        streaming={200}
+        listener={600}
       />
       <BuySongItem
         title={title}

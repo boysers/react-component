@@ -1,11 +1,13 @@
 import React from 'react'
 import up from '@/assets/up.png'
+import down from '@/assets/down.png'
 
 type JacketItemProps = {
   title: string
   listeningRate: string
   price: string
   image: string
+  isTrending: boolean
   onClick?: () => void
   style?: React.CSSProperties
 }
@@ -14,6 +16,7 @@ export const JacketItem: React.FC<JacketItemProps> = ({
   title,
   listeningRate,
   price,
+  isTrending,
   image,
   onClick,
   style
@@ -41,8 +44,17 @@ export const JacketItem: React.FC<JacketItemProps> = ({
         <h4 style={{ margin: 0, fontSize: '1.25rem' }}>{title}</h4>
         <p style={{ margin: '4px 0' }}>
           Taux d&apos;écoute :{' '}
-          <img src={up} alt="listeningRate" style={{ paddingRight: '3px' }} />
-          <span style={{ color: '#00ff5a', fontWeight: 500 }}>
+          <img
+            src={isTrending ? up : down}
+            alt="listeningRate"
+            style={{ paddingRight: '3px' }}
+          />
+          <span
+            style={{
+              color: isTrending ? '#00ff5a' : '#ff0000',
+              fontWeight: 500
+            }}
+          >
             {listeningRate}
           </span>
         </p>
