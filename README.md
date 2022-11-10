@@ -1,4 +1,4 @@
-# Shopping Project 
+# React Component
 
 ### `npm run dev`
 
