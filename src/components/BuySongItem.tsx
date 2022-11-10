@@ -22,7 +22,6 @@ export const BuySongItem: React.FC<BuySongItemProps> = ({
         display: 'flex',
         color: '#f0f0f0',
         backgroundColor: '#2d293c',
-        maxWidth: '350px',
         maxHeight: '100px',
         alignItems: 'center',
         ...style

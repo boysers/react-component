@@ -24,7 +24,6 @@ export const JacketItem: React.FC<JacketItemProps> = ({
         display: 'flex',
         color: '#f0f0f0',
         backgroundColor: '#23262b',
-        maxWidth: '350px',
         padding: '16px',
         borderRadius: '6px',
         ...style

@@ -1,11 +1,13 @@
 import React from 'react'
 import up from '@/assets/up.png'
+import down from '@/assets/down.png'
 
 type SongItemProps = {
   title: string
   listeningRate: string
   streaming: number
   image: string
+  isTrending: boolean
   style?: React.CSSProperties
 }
 
@@ -14,6 +16,7 @@ export const SongItem: React.FC<SongItemProps> = ({
   listeningRate,
   image,
   streaming,
+  isTrending,
   style
 }) => {
   return (
@@ -22,7 +25,6 @@ export const SongItem: React.FC<SongItemProps> = ({
         display: 'flex',
         color: '#f0f0f0',
         backgroundColor: '#2d293c',
-        maxWidth: '350px',
         padding: '12px',
         borderRadius: '12px',
         alignItems: 'center',
@@ -45,10 +47,29 @@ export const SongItem: React.FC<SongItemProps> = ({
         >
           <h5 style={{ margin: 0, fontSize: '1.1rem' }}>{title}</h5>
           <p style={{ margin: '4px 0' }}>
-            <img src={up} alt="listeningRate" style={{ paddingRight: '3px' }} />
-            <span style={{ color: '#00ff5a', fontWeight: 500 }}>
-              {listeningRate}
-            </span>
+            {isTrending ? (
+              <>
+                <img
+                  src={up}
+                  alt="listeningRate"
+                  style={{ paddingRight: '3px' }}
+                />
+                <span style={{ color: '#00ff5a', fontWeight: 500 }}>
+                  {listeningRate}
+                </span>
+              </>
+            ) : (
+              <>
+                <img
+                  src={down}
+                  alt="listeningRate"
+                  style={{ paddingRight: '3px' }}
+                />
+                <span style={{ color: '#ff0000', fontWeight: 500 }}>
+                  {listeningRate}
+                </span>
+              </>
+            )}
           </p>
         </div>
         <div

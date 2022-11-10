@@ -7,14 +7,16 @@ import { SongItem } from '@/components/SongItem'
 import { BuySongItem } from '@/components/BuySongItem'
 
 export const Home: React.FC = () => {
+  const title = 'Song Title'
+
   const onHandleClick = () => {
-    alert('teoria')
+    alert('click btn')
   }
 
   return (
-    <div style={{ margin: 15 }}>
+    <div style={{ margin: 15, width: '400px' }}>
       <JacketItem
-        title="Teoria"
+        title={title}
         image={bannerAlbum1}
         price="50 TEO"
         listeningRate="+25%"
@@ -22,14 +24,23 @@ export const Home: React.FC = () => {
         style={{ margin: '10px' }}
       />
       <SongItem
-        title="Teoria"
+        title={title}
         image={bannerSong}
         style={{ margin: '10px' }}
         listeningRate="+25%"
+        isTrending={true}
+        streaming={200}
+      />
+      <SongItem
+        title={title}
+        image={bannerSong}
+        style={{ margin: '10px' }}
+        listeningRate="-25%"
+        isTrending={false}
         streaming={200}
       />
       <BuySongItem
-        title="Teoria"
+        title={title}
         image={Frame_42}
         style={{ margin: '10px' }}
         token={50}
