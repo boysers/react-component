@@ -5,7 +5,7 @@ import down from '@/assets/down.png'
 type SongItemProps = {
   title: string
   listeningRate: string
-  streaming: number
+  listener: number
   image: string
   isTrending: boolean
   style?: React.CSSProperties
@@ -15,7 +15,7 @@ export const SongItem: React.FC<SongItemProps> = ({
   title,
   listeningRate,
   image,
-  streaming,
+  listener,
   isTrending,
   style
 }) => {
@@ -79,7 +79,7 @@ export const SongItem: React.FC<SongItemProps> = ({
             width: '100%'
           }}
         >
-          <p style={{ margin: '4px 0' }}>Nombre d&apos;écoute : {streaming}</p>
+          <p style={{ margin: '4px 0' }}>Nombre d&apos;écoute : {listener}</p>
           <p style={{ margin: '4px 0' }}>
             <span style={{ fontWeight: 700 }}>+1</span> dans 25min
           </p>
