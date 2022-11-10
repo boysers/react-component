@@ -47,29 +47,19 @@ export const SongItem: React.FC<SongItemProps> = ({
         >
           <h5 style={{ margin: 0, fontSize: '1.1rem' }}>{title}</h5>
           <p style={{ margin: '4px 0' }}>
-            {isTrending ? (
-              <>
-                <img
-                  src={up}
-                  alt="listeningRate"
-                  style={{ paddingRight: '3px' }}
-                />
-                <span style={{ color: '#00ff5a', fontWeight: 500 }}>
-                  {listeningRate}
-                </span>
-              </>
-            ) : (
-              <>
-                <img
-                  src={down}
-                  alt="listeningRate"
-                  style={{ paddingRight: '3px' }}
-                />
-                <span style={{ color: '#ff0000', fontWeight: 500 }}>
-                  {listeningRate}
-                </span>
-              </>
-            )}
+            <img
+              src={isTrending ? up : down}
+              alt="listeningRate"
+              style={{ paddingRight: '3px' }}
+            />
+            <span
+              style={{
+                color: isTrending ? '#00ff5a' : '#ff0000',
+                fontWeight: 500
+              }}
+            >
+              {listeningRate}
+            </span>
           </p>
         </div>
         <div
